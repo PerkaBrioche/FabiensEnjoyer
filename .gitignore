@@ -31,6 +31,13 @@
 *.out
 *.app
 
-
+# Visual Studio Files
 .vs/
+*.vs
 
+# Build Files
+*/x64
+/x64
+
+/external
+/.vs
