@@ -2,11 +2,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <windows.h>
-#include "Tools.h"
 #include "Character.h"
-
-void main() 
-{
-
-}
+void Initalization();
+void NewRound();
+void PlayerRound();
+void DisplaySFML();
+void ResetRound();
 
