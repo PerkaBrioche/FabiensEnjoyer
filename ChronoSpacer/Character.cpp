@@ -2,6 +2,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Tools.h"
+#include "Character.cpp"
+
 
 int palierLevel[7] = { 20,40,70,110,180,260,350 };
 
