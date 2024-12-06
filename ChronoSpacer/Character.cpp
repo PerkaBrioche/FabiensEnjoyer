@@ -1,61 +1,50 @@
-#pragma once
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include "Tools.h"
-#include "Character.cpp"
+#include "Character.h"
+const int palierCount = 7;
+int palierLevel[palierCount];
 
-
-int palierLevel[7] = { 20,40,70,110,180,260,350 };
-struct CharacterInfo
+void InitializePlayer(Character& player)
 {
-    int level;
-    int experience;
-    int damage;
-    int baseLife;
-    int actualLife;
-};
+    // INITIALISE LE JOUEUR ET MODIFIE DIRECTEMENT SES STATS, IMAGE POSITION ECT
 
-struct Character
-{
-    sf::Texture characterTexture;
-    CharacterInfo Info;
+    //sf::Sprite playerTexture;
 
-    int GetDamage(Character chara)
-    {
-        return (chara.Info.damage * chara.Info.level);
-    }
-    void ReceiveDamage(int damage)
-    {
-        Info.actualLife - damage;
-    }
-    void ReceiveXp(int xp)
-    {
-        Info.experience += xp;
-        CheckIfLevelUp();
-    }
+    //InitializeSprite(playerTexture, "player.png", sf::Vector2f{ 400, 300 }, sf::Vector2f{ 0, 0 });
 
-    void CheckIfLevelUp()
-    {
-        if (Info.level >= sizeof(palierLevel)) { return; }
-        if (Info.experience > palierLevel[Info.level]) 
-        {
-            Info.experience = 0;
-            Info.level++;
-            Info.damage += 5;
-        }
-    }
-};
+    sf::CircleShape circle;
+    CreateCircle(circle, sf::Color::Green, 30.0f, { 150,200 });
 
-
-void InitializeSprite(sf::Sprite& targerImage, std::string assetName, sf::Vector2f targetScale, sf::Vector2f targetPosition)
-{
-    sf::Texture targetTexture;
-    sf::Vector2u targetSize;
-
-    targetTexture.loadFromFile(GetDirectories("Assets") + assetName);
-    targerImage.setTexture(targetTexture);
-    targetSize = targetTexture.getSize();
-    targerImage.setOrigin(sf::Vector2f(targetSize.x / 2.0f, targetSize.y / 2.0f));
-    targerImage.setScale(targetScale);
-    targerImage.setPosition(targetPosition);
+    CharacterInfo charaInfo = { false ,0, 0, 5, 1 ,10 };
+    player = { circle, charaInfo };
 }
+
+Character InitializeEnemy(Character player)
+{
+    // INITIALISER UN ENNEMI AVEC LE LEVEL DU PLAYER
+    int level = player.Info.level;
+    int damage = (GetRandomRange(2, 5) * level);
+    int baseLife = (GetRandomRange(4, 8) * level);
+    // STATS RANDOM DANS LA RANGE DU JOUEUR
+
+    //sf::Sprite EnemyTexture;
+    //InitializeSprite(EnemyTexture, "enemy.png", sf::Vector2f{ 400, 300 }, sf::Vector2f{ 0, 0 });
+
+    sf::CircleShape circle;
+    CreateCircle(circle, sf::Color::Red, 30.0f, { 200,200 });
+
+    CharacterInfo charaInfo = { true, level, 0, damage, baseLife };
+    Character Enemy = { circle, charaInfo };
+
+    return Enemy;
+}
+
+
+void DefinePalierLevel(int* p)
+{
+    for (int i = 0; i < palierCount; i++) 
+    {
+        palierLevel[i] = p[i];
+    }
+}
+
+
+    //    palierLevel[7] = { 20, 40, 70, 110, 180, 260, 350 };
