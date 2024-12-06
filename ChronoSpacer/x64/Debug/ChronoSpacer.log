@@ -1,3 +1,5 @@
-﻿  ChronoSpacer.cpp
-C:\Users\lemer\Bureau\IIM\A2\PROG\C++\Test\ChronoSpacer\ChronoSpacer\ChronoSpacer.cpp(93,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+﻿  Character.cpp
+  Main.cpp
+C:\Users\lemer\Bureau\IIM\A2\PROG\C++\Test\ChronoSpacer\ChronoSpacer\Main.cpp(7,1): warning C4326: le type de retour de 'main' doit être 'int' au lieu de 'void'
+  Génération de code en cours...
   ChronoSpacer.vcxproj -> C:\Users\lemer\Bureau\IIM\A2\PROG\C++\Test\ChronoSpacer\x64\Debug\ChronoSpacer.exe
