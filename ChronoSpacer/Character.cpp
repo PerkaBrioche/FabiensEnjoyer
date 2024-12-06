@@ -1,40 +1,8 @@
 #pragma once
 #include <iostream>
-#include <SFML/Graphics.hpp>
 #include "Tools.h"
 
-int palierLevel[7] = { 20,40,70,110,180,260,350 };
-
-struct Character
-{
-    sf::Texture characterTexture;
-    CharacterInfo Info;
-
-    int GetDamage(Character chara)
-    {
-        return (chara.Info.damage * chara.Info.level);
-    }
-    void ReceiveDamage(int damage)
-    {
-        Info.actualLife - damage;
-    }
-    void ReceiveXp(int xp)
-    {
-        Info.experience += xp;
-        CheckIfLevelUp();
-    }
-
-    void CheckIfLevelUp()
-    {
-        if (Info.level >= sizeof(palierLevel)) { return; }
-        if (Info.experience > palierLevel[Info.level]) 
-        {
-            Info.experience = 0;
-            Info.level++;
-            Info.damage += 5;
-        }
-    }
-};
+int palierLevel[7] = { 20, 40, 70, 110, 180, 260, 350 };
 
 struct CharacterInfo
 {
@@ -45,15 +13,39 @@ struct CharacterInfo
     int actualLife;
 };
 
-void InitializeSprite(sf::Sprite& targerImage, std::string assetName, sf::Vector2f targetScale, sf::Vector2f targetPosition)
+struct Character
 {
-    sf::Texture targetTexture;
-    sf::Vector2u targetSize;
+    sf::Sprite characterTexture;
+    CharacterInfo Info;
 
-    targetTexture.loadFromFile(GetDirectories("Assets") + assetName);
-    targerImage.setTexture(targetTexture);
-    targetSize = targetTexture.getSize();
-    targerImage.setOrigin(sf::Vector2f(targetSize.x / 2.0f, targetSize.y / 2.0f));
-    targerImage.setScale(targetScale);
-    targerImage.setPosition(targetPosition);
-}
+    int GetDamage() const
+    {
+        return Info.damage * Info.level;
+    }
+
+    void ReceiveDamage(int damage)
+    {
+        Info.actualLife -= damage;
+        if (Info.actualLife < 0) Info.actualLife = 0;
+    }
+
+    void ReceiveXp(int xp)
+    {
+        Info.experience += xp;
+        CheckIfLevelUp();
+    }
+
+    void CheckIfLevelUp()
+    {
+        int maxLevels = sizeof(palierLevel) / sizeof(palierLevel[0]);
+        if (Info.level >= maxLevels) return;
+
+        if (Info.experience >= palierLevel[Info.level])
+        {
+            Info.experience = 0;
+            Info.level++;
+            Info.damage += 5;
+            Info.actualLife = Info.baseLife;
+        }
+    }
+};
