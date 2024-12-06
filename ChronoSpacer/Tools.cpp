@@ -2,12 +2,6 @@
 #include <iostream>
 #include <windows.h>
 
-std::string GetDirectories(std::string dname)
-{
-	std::string appPath = GetAppPath();
-	appPath = appPath + dname + "\"";
-	return appPath;
-}
 
 std::string GetAppPath()
 {
@@ -18,4 +12,12 @@ std::string GetAppPath()
 	std::string appPath = exeFilePath.substr(0, exeNamePos + 1);
 	return appPath;
 }
+
+std::string GetDirectories(std::string dname)
+{
+	std::string appPath = GetAppPath();
+	appPath = appPath + dname + "\"";
+	return appPath;
+}
+
 

@@ -4,6 +4,14 @@
 #include "Tools.h"
 
 int palierLevel[7] = { 20,40,70,110,180,260,350 };
+struct CharacterInfo
+{
+    int level;
+    int experience;
+    int damage;
+    int baseLife;
+    int actualLife;
+};
 
 struct Character
 {
@@ -36,14 +44,6 @@ struct Character
     }
 };
 
-struct CharacterInfo
-{
-    int level;
-    int experience;
-    int damage;
-    int baseLife;
-    int actualLife;
-};
 
 void InitializeSprite(sf::Sprite& targerImage, std::string assetName, sf::Vector2f targetScale, sf::Vector2f targetPosition)
 {

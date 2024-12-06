@@ -1,3 +1,6 @@
-﻿  ChronoSpacer.cpp
-C:\Users\lemer\Bureau\IIM\A2\PROG\C++\Test\ChronoSpacer\ChronoSpacer\ChronoSpacer.cpp(93,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-  ChronoSpacer.vcxproj -> C:\Users\lemer\Bureau\IIM\A2\PROG\C++\Test\ChronoSpacer\x64\Debug\ChronoSpacer.exe
+﻿  Character.cpp
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Tools.cpp(11,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  (compiler le fichier source 'Character.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(27,25): warning C4552: '-' : résultat de l'expression non utilisé
+LINK : fatal error LNK1104: impossible d'ouvrir le fichier 'sfml-graphics-d.lib'
