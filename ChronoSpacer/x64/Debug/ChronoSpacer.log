@@ -3,4 +3,9 @@ D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Tools.cpp(11,17): warning C4267: 'initia
   (compiler le fichier source 'Character.cpp')
   
 D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(27,25): warning C4552: '-' : résultat de l'expression non utilisé
+  Main.cpp
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Tools.cpp(11,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  (compiler le fichier source 'Main.cpp')
+  
+  Génération de code en cours...
 LINK : fatal error LNK1104: impossible d'ouvrir le fichier 'sfml-graphics-d.lib'

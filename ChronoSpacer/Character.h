@@ -6,8 +6,10 @@ struct CharacterInfo
     int baseLife;
     int actualLife;
 };
-struct Character;
-int GetDamage(Character chara);
-void ReceiveDamage(int damage);
-void ReceiveXp(int xp);
+struct Character {
+
+    int GetDamage(Character chara);
+    void ReceiveDamage(int damage);
+    void ReceiveXp(int xp);
+};
 
