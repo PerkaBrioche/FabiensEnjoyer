@@ -2,10 +2,41 @@
 D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Tools.cpp(11,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
   (compiler le fichier source 'Character.cpp')
   
-D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(27,25): warning C4552: '-' : résultat de l'expression non utilisé
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(29,25): warning C4552: '-' : résultat de l'expression non utilisé
   Main.cpp
 D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Tools.cpp(11,17): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
   (compiler le fichier source 'Main.cpp')
   
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(1,1): error C2059: erreur de syntaxe : '<<'
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(3,1): error C2143: erreur de syntaxe : absence de ';' avant '{'
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(3,1): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(16,1): error C2059: erreur de syntaxe : '=='
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(8,22): error C2143: erreur de syntaxe : absence de ';' avant '{'
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(8,22): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.cpp(18,8): error C2011: 'Character' : redéfinition du type 'struct'
+  (compiler le fichier source 'Main.cpp')
+      D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(10,8):
+      voir la déclaration de 'Character'
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Character.h(24,1): error C2059: erreur de syntaxe : '>>'
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Main.h(9,1): error C2143: erreur de syntaxe : absence de ';' avant '{'
+  (compiler le fichier source 'Main.cpp')
+  
+D:\A2 JV-GP\FabiensEnjoyer\ChronoSpacer\Main.h(9,1): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+  (compiler le fichier source 'Main.cpp')
+  
   Génération de code en cours...
-LINK : fatal error LNK1104: impossible d'ouvrir le fichier 'sfml-graphics-d.lib'
